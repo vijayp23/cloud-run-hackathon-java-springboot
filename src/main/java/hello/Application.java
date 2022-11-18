@@ -58,49 +58,21 @@ public class Application {
     //System.out.println(arenaUpdate);
     //String[] commands = new String[]{"F", "R", "L", "T"};
 
-    Arena myArena = arenaUpdate.arena;
-    Integer x = myArena.dims.get(0);
-    Integer y = myArena.dims.get(1);
+//    Arena myArena = arenaUpdate.arena;
+//    Integer x = myArena.dims.get(0);
+//    Integer y = myArena.dims.get(1);
+//
+//    List<Integer> arenaDims = myArena.dims;
+//
+//
+//    PlayerState myState = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
+//    Integer myScore = myState.score;
 
-    List<Integer> arenaDims = myArena.dims;
+    String[] commands = new String[]{"F", "R", "L", "T", "T", "T", "T", "T", "T", "T", "T","T","T"};
 
-
-    PlayerState myState = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
-    Integer myScore = myState.score;
-
-    if (myScore < 0 && (myScore % 10) == 0)
-    {
-      return "F";
-    } else if (myScore < 0 && (myScore % 9) == 0)
-    {
-      return "L";
-    }
-    else if (myScore < 0 && (myScore % 5) == 0)
-    {
-      return "R";
-    }
-    else if (myScore < 0){
-      return "T";
-    }
-
-    if (myScore > 0 && (myScore % 30) == 0)
-    {
-      return "F";
-    }
-
-    if (myScore > 0 && (myScore % 20) == 0)
-    {
-      return "L";
-    }
-
-    if (myScore > 0 && (myScore % 10) == 0)
-    {
-      return "R";
-    }
-
-
-    //    return commands[i];
-    return "T";
+    int i = new Random().nextInt(12);
+    return commands[i];
+    
   }
 
 }
