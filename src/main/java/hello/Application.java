@@ -139,8 +139,14 @@ public class Application {
 //      return "R";
 //    }
 
+    PlayerState myState = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
+
     String[] commands = new String[]{"F", "R", "L", "T", "T", "T", "T", "T", "T", "T", "T","T","T"};
     int i = new Random().nextInt(12);
+    if(myState.wasHit)
+    {
+      return "T";
+    }
     return commands[i];
 
   }
