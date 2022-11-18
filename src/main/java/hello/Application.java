@@ -55,7 +55,7 @@ public class Application {
 
   @PostMapping("/**")
   public String index(@RequestBody ArenaUpdate arenaUpdate) {
-    System.out.println(arenaUpdate.toString());
+//    System.out.println(arenaUpdate.arena);
     //String[] commands = new String[]{"F", "R", "L", "T"};
 
     Arena myArena = arenaUpdate.arena;
@@ -72,10 +72,23 @@ public class Application {
     String[] commands = new String[]{"F", "R", "L", "T", "T", "T", "T", "T", "T", "T", "T","T","T"};
 
     int i = new Random().nextInt(12);
+    System.out.println(myX);
+    System.out.println(myY);
+    System.out.println(myD);
+    String myRes = commands[i];
+    if (myX == 0 && myD.equals("E") && myRes.equals("T"))
+    {
+      return "R";
+    }
 
-//    if (myX == 0 && myD.equals())
-//
-//    if (myX == 0 && myState.direction == "")
+    if (myY == 0 && myD.equals("N") && myRes.equals("T"))
+    {
+      if (myX < arenaDims.get(0))
+      {
+        return "R";
+      }
+        return "L";
+    }
 
     return commands[i];
 
