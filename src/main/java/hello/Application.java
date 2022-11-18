@@ -55,13 +55,41 @@ public class Application {
 
   @PostMapping("/**")
   public String index(@RequestBody ArenaUpdate arenaUpdate) {
-    System.out.println(arenaUpdate);
-    String[] commands = new String[]{"F", "R", "L", "T"};
-    int i = new Random().nextInt(4);
-    
-    // TODO add your implementation here to replace the random response. 
-    
-//    return commands[i];
+    //System.out.println(arenaUpdate);
+    //String[] commands = new String[]{"F", "R", "L", "T"};
+
+    Arena myArena = arenaUpdate.arena;
+    Integer x = myArena.dims.get(0);
+    Integer y = myArena.dims.get(1);
+
+    List<Integer> arenaDims = myArena.dims;
+
+
+    PlayerState myState = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
+    Integer myScore = myState.score;
+
+    if (myScore < 0 && (myScore % 2) == 0)
+    {
+      return "F";
+    }
+
+    if (myScore > 0 && (myScore % 30) == 0)
+    {
+      return "F";
+    }
+
+    if (myScore > 0 && (myScore % 20) == 0)
+    {
+      return "L";
+    }
+
+    if (myScore > 0 && (myScore % 10) == 0)
+    {
+      return "R";
+    }
+
+
+    //    return commands[i];
     return "T";
   }
 
