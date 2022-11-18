@@ -76,21 +76,70 @@ public class Application {
     System.out.println(myY);
     System.out.println(myD);
     String myRes = commands[i];
+
+
     if (myX == 0 && myD.equals("E") && myRes.equals("T"))
     {
-      return "R";
+      if (myY == 0)     //top left
+      {
+        return "L";
+      }
+
+      if  (myY.equals(arenaDims.get(1)))
+      {     //Bottom left
+        return "R";
+      }
+
+      return "L";
     }
 
     if (myY == 0 && myD.equals("N") && myRes.equals("T"))
     {
-      if (myX < arenaDims.get(0))
+      if (myX == 0)     //top left
       {
         return "R";
       }
+
+      if  (myX.equals(arenaDims.get(0)))
+      {     //top Right
         return "L";
+      }
+
+      return "R";
     }
 
-    return commands[i];
+    if (myX.equals(arenaDims.get(0)) && myD.equals("W") && myRes.equals("T"))
+    {
+      if (myY == 0)     //top Right
+      {
+        return "R";
+      }
+
+      if  (myY.equals(arenaDims.get(1)))
+      {     //Bottom Right
+        return "L";
+      }
+
+      return "L";
+    }
+
+    if (myY.equals(arenaDims.get(1)) && myD.equals("S") && myRes.equals("T"))
+    {
+      if (myX == 0)     //Bottom left
+      {
+        return "L";
+      }
+
+      if  (myX.equals(arenaDims.get(0)))
+      {     //Bottom Right
+        return "R";
+      }
+
+      return "R";
+    }
+
+
+    return myRes;
 
   }
 
