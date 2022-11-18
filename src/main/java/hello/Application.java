@@ -68,9 +68,11 @@ public class Application {
     PlayerState myState = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
     Integer myScore = myState.score;
 
-    if (myScore < 0 && (myScore % 2) == 0)
+    if (myScore < 0 && (myScore % 5) == 0)
     {
       return "F";
+    } else {
+      return "T";
     }
 
     if (myScore > 0 && (myScore % 30) == 0)
