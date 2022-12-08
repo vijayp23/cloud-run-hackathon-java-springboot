@@ -137,7 +137,7 @@ public class Application {
 
       return "R";
     }
-    String ech = "xArean: " + x + " yArena: " + y + " myX: " + myX + " myY: " + myY + " myD: " + myD + " myRes:" + mtRes;
+    String ech = "xArean: " + x + " yArena: " + y + " myX: " + myX + " myY: " + myY + " myD: " + myD + " myRes:" + myRes;
     System.out.println(ech);
     return myRes;
   }
