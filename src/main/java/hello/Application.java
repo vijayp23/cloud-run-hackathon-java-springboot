@@ -59,16 +59,16 @@ public class Application {
     PlayerState myState = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
     String myRes;
 
-    if(!myState.wasHit)
-    {
+//     if(!myState.wasHit)
+//     {
       String[] com = new String[]{"F","R","L", "T", "T", "T", "T", "T", "T", "T", "T", "T", "T", "T"};
       int j = new Random().nextInt(13);
       myRes = com[j];
-    } else {
-      String[] commands = new String[]{"F","R","R", "L", "F", "F", "F", "R", "L"};
-      int i = new Random().nextInt(8);
-      myRes = commands[i];
-    }
+//     } else {
+//       String[] commands = new String[]{"F","R","R", "L", "F", "F", "F", "R", "L"};
+//       int i = new Random().nextInt(8);
+//       myRes = commands[i];
+//     }
 
     Arena myArena = arenaUpdate.arena;
     Integer x = myArena.dims.get(0) - 1 ;
