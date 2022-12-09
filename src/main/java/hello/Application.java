@@ -137,8 +137,8 @@ public class Application {
 
       return "R";
     }
-    String ech = "xArean: " + x + " yArena: " + y + " myX: " + myX + " myY: " + myY + " myD: " + myD + " myRes:" + myRes + " MyURL: " + arenaUpdate._links.self.href;
-    System.out.println(ech);
+//     String ech = "xArean: " + x + " yArena: " + y + " myX: " + myX + " myY: " + myY + " myD: " + myD + " myRes:" + myRes + " MyURL: " + arenaUpdate._links.self.href;
+//     System.out.println(ech);
     return myRes;
   }
 
