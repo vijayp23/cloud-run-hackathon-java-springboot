@@ -71,8 +71,8 @@ public class Application {
     }
 
     Arena myArena = arenaUpdate.arena;
-    Integer x = myArena.dims.get(0);
-    Integer y = myArena.dims.get(1);
+    Integer x = myArena.dims.get(0) - 1 ;
+    Integer y = myArena.dims.get(1) - 1;
 
     Integer myX = myState.x;
     Integer myY = myState.y;
